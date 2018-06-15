@@ -1,0 +1,18 @@
+#gameTitle {
+    font-family: 'Kaushan Script', cursive;
+}
+
+h3, h4, span {
+    font-family: 'Philosopher', sans-serif;
+}
+
+.jumbotron {
+    background-image: url("../images/psychic-background.jpg");
+    background-size: cover;
+}
+
+body {
+    background-image: url("../images/game-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

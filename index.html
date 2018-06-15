@@ -3,32 +3,55 @@
     <head>
         <title>Psychic Game</title>
         <meta charset="UTF-8">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" 
+            rel="stylesheet" 
+            integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" 
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Philosopher" rel="stylesheet">
+
     </head>
 
     <body>
-        <h1>Psychic Game!</h1>
 
-        <h3>Guess which letter I'm thinking of.</h3>
+        <div class="jumbotron text-right">
+            <h1 class="display-1 text-light" id="gameTitle">Psychic Game!</h1>
+            <br />
 
-        <!-- Prompt to get player to start the game. -->
-        <h4 id="startGame">~Take your first guess by pressing any key~</h4>
+            <h3 class="lead text-light">Guess which letter I'm thinking of.</h3>
+        </div>
 
-        <!-- Counts total number of wins -->
-        <span id="winCount"></span>
-        <br />
+        <div class="container">
 
-        <!-- Counts total number of losses -->
-        <span id="lossCount"></span>
-        <br />
+            <div class="col-md-6 mx-auto mt-auto">
 
-        <!-- Counts total number of guesses remaining -->
-        <span id="guessRemaining"></span>
-        <br />
+                <!-- Prompt to get player to start the game. -->
+                <h4 id="startGame" class="row">~Take your first guess by pressing any key~</h4>
 
-        <!-- Lists each guess the player has previously chosen -->
-        <span id="guessCount"></span>
-        <br />
+                <!-- Counts total number of wins -->
+                <span id="winCount" class="row"></span>
+                <br />
 
+                <!-- Counts total number of losses -->
+                <span id="lossCount" class="row"></span>
+                <br />
+
+                <!-- Counts total number of guesses remaining -->
+                <span id="guessRemaining" class="row"></span>
+                <br />
+
+                <!-- Lists each guess the player has previously chosen -->
+                <span id="guessCount" class="row"></span>
+                <br />
+
+            </div>
+
+        </div>
+
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" 
+            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" 
+            crossorigin="anonymous"></script>
         <script src="assets/javascript/game.js"></script>
 
     </body>

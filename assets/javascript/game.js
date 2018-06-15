@@ -3,6 +3,7 @@
 var wins = 0;
 var losses = 0;
 var remainingGuess = 10;
+var yourGuess = "";
 
 
 // Create an array of all the letters the computer can choose from.
@@ -11,9 +12,12 @@ var alphaArray = str.split("");
 
 // Create a function that concatenates the guesses to display all the previous guesses.
 function guessList(sample) {
-    document.getElementById("guessCount").innerHTML = sample;
     sample += " ";
+    yourGuess += sample;
 }
+
+// Computer chooses its first letter
+var compGuess = alphaArray[Math.floor(Math.random() * alphaArray.length)]
 
 // When the player presses a button...
 document.onkeyup = function (event) {
@@ -25,14 +29,18 @@ document.onkeyup = function (event) {
     var playerGuess = event.key;
     console.log(playerGuess);
     
-    // Store the computer's guess
-    var compGuess = alphaArray[Math.floor(Math.random() * alphaArray.length)]
-    console.log(compGuess);
 
     // Compare the user and computer's guess
-    // If the user guesses correctly, increase the win score by 1.
+    // If the user guesses correctly...
     if (playerGuess === compGuess) {
+        // Increase the win score by 1.
         wins++;
+        // Reset the number of guesses
+        remainingGuess = 10;
+        // Reset the list of previous guesses
+        yourGuess = ""
+        // Computer chooses a new letter
+        compGuess = alphaArray[Math.floor(Math.random() * alphaArray.length)]
     }
      // If the user guesses incorrectly, and decrease the guesses remaining by 1.
     else {
@@ -48,12 +56,17 @@ document.onkeyup = function (event) {
         losses++;
         // Reset the guesses remaing score to 10.
         remainingGuess = 10;
+        // Reset the previous guesses
+        yourGuess = "";
+        // Computer chooses a new letter
+        compGuess = alphaArray[Math.floor(Math.random() * alphaArray.length)]
     }    
 
     // Display the scores to refresh every time the user presses a key.
     document.getElementById("winCount").innerHTML = "Wins: " + wins;
     document.getElementById("lossCount").innerHTML = "Losses: " + losses;
     document.getElementById("guessRemaining").innerHTML = "Guesses left: " + remainingGuess;
-    document.getElementById("guessCount").innerHTML = "Your guesses so far: " + playerGuess;
+    document.getElementById("guessCount").innerHTML = "Your guesses so far: " + yourGuess;
+    console.log(yourGuess);
     
 }
